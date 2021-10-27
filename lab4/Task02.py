@@ -53,7 +53,8 @@ class Order:
         self.order_date = order_date
 
     def __str__(self) -> str:
-        return f'Zamowienie: \n {self.employee}, \n ' \
+        return f'Zamowienie: \n ' \
+               f'{self.employee}, \n ' \
                f'{self.student}, \n' \
                f' Ksiazki: \n ' + ', \n '.join(str(book) for book in self.books) + ', \n' \
                f' Data zamowienia: {self.order_date}'

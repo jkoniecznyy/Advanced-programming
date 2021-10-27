@@ -30,7 +30,7 @@ print(order2)
 
 print("\nTask3\n")
 
-house1 = House(102, 3, 700000, 'Zukowa, Opole', 70)
+house1 = House(102, 3, 700000, 'Zukowa, Opole', 700)
 flat1 = Flat(42, 1, 200000, 'Muzyczna, Krasiejow', 3)
 print(house1)
 print(flat1)
