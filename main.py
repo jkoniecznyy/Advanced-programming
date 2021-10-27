@@ -1,62 +1,36 @@
-def sayHi(name: str, surname: str) -> str:
-    return f'Czesc {name} {surname}!'
+from lab4.Task01 import Student
+from lab4.Task02 import Library, Employee, Book, Order
+from lab4.Task03 import Flat, House
 
+print("\nTask1\n")
 
-def multiply(nr1: int, nr2: int) -> int:
-    return nr1 * nr2
+stud1 = Student('Andrzej Gołota', 51)
+stud2 = Student('Marcin Najman', 50)
+stud3 = Student('Mariusz Pudzianowski', 53)
+print(stud1.is_passed())
+print(stud2.is_passed())
 
+print("\nTask2\n")
 
-def evenCheck(number: int) -> bool:
-    return number % 2 == 0
+lib1 = Library('Mikołów', 'Mysia', '43-190', 'pon-pt 8-12', '+48 123 456 789')
+lib2 = Library('Mikołów', 'Reta', '43-190', 'pon-pt 8-16', '+48 444 456 888')
+book1 = Book(lib1, '14.02.2001', 'Jerzy', 'Killer', 550)
+book2 = Book(lib1, '14.02.2011', 'Krzysztof', 'Waski', 500)
+book3 = Book(lib2, '14.03.2021', 'Stefan', 'Siara', 600)
+book4 = Book(lib2, '14.04.2021', 'Gabrysia', 'Siarzewska', 2000)
+book5 = Book(lib1, '14.05.2021', 'Jerzy', 'Ryba', 60)
+emp1 = Employee('Artur', 'Boruc', '23.10.2020', '20.01.1990', 'Mikołów', 'Krucza', '43-190', '+48 333 456 777')
+emp2 = Employee('Wojtek', 'Szczesny', '23.10.2019', '21.01.1990', 'Mikołów', 'Jana Pawla', '43-190', '+48 333 456 999')
+emp3 = Employee('Luki', 'Fabianski', '23.10.2018', '22.01.1990', 'Mikołów', 'Zachodnia', '43-190', '+48 333 456 000')
+order1 = Order(emp1, stud1, [book1, book3, book2], '26.10.2021')
+order2 = Order(emp3, stud3, [book3, book4, book5], '27.10.2021')
+print(order1)
+print()
+print(order2)
 
+print("\nTask3\n")
 
-def task4(nr1: int, nr2: int, nr3: int) -> bool:
-    return nr1 + nr2 >= nr3
-
-
-def findInList(numbers: list, number: int) -> bool:
-    return number in numbers
-
-
-def mergeLists(list1: list, list2: list) -> list:
-    result = set()
-
-    for l1 in list1:
-        result.add(l1)
-
-    for l2 in list2:
-        result.add(l2)
-
-    result = list(result)
-    for i, r in enumerate(result):
-        if type(r) is int or type(r) is float or type(r) is complex:
-            result[i] = r ** 3
-
-    return result
-
-
-print("Task1")
-result = sayHi('Johnny', 'Silverhand')
-print(result)
-
-print("Task2")
-print(multiply(6, 8))
-
-print("Task3")
-result = evenCheck(55)
-print("Liczba parzysta" if result else "Liczba nieparzysta")
-result = evenCheck(60)
-print("Liczba parzysta" if result else "Liczba nieparzysta")
-
-print("Task4")
-print(task4(1, 2, 8))
-print(task4(1, 2, 1))
-
-print("Task5")
-fil = findInList([1, 2, 3, 4, 5, 6, 7, 8, 9], 3)
-print('The number was in the list' if fil else 'The number was not in the list')
-fil = findInList([1, 2, 3, 4, 5, 6, 7, 8, 9], 30)
-print('The number was in the list' if fil else 'The number was not in the list')
-
-print("Task6")
-print(mergeLists([1, 2, 3, 4, 8, 'try', b'me'], [2, 3, 4, 5, 6, 7, 8, 9.9, 100, 6.7, 2j]))
+house1 = House(102, 3, 700000, 'Zukowa, Opole', 70)
+flat1 = Flat(42, 1, 200000, 'Muzyczna, Krasiejow', 3)
+print(house1)
+print(flat1)
