@@ -19,9 +19,12 @@ book2 = Book(lib1, '14.02.2011', 'Krzysztof', 'Waski', 500)
 book3 = Book(lib2, '14.03.2021', 'Stefan', 'Siara', 600)
 book4 = Book(lib2, '14.04.2021', 'Gabrysia', 'Siarzewska', 2000)
 book5 = Book(lib1, '14.05.2021', 'Jerzy', 'Ryba', 60)
-emp1 = Employee('Artur', 'Boruc', '23.10.2020', '20.01.1990', 'Mikołów', 'Krucza', '43-190', '+48 333 456 777')
-emp2 = Employee('Wojtek', 'Szczesny', '23.10.2019', '21.01.1990', 'Mikołów', 'Jana Pawla', '43-190', '+48 333 456 999')
-emp3 = Employee('Luki', 'Fabianski', '23.10.2018', '22.01.1990', 'Mikołów', 'Zachodnia', '43-190', '+48 333 456 000')
+emp1 = Employee('Artur', 'Boruc', '23.10.2020', '20.01.1990',
+                'Mikołów', 'Krucza', '43-190', '+48 333 456 777')
+emp2 = Employee('Wojtek', 'Szczesny', '23.10.2019', '21.01.1990',
+                'Mikołów', 'Jana Pawla', '43-190', '+48 333 456 999')
+emp3 = Employee('Luki', 'Fabianski', '23.10.2018', '22.01.1990',
+                'Mikołów', 'Zachodnia', '43-190', '+48 333 456 000')
 order1 = Order(emp1, stud1, [book1, book3, book2], '26.10.2021')
 order2 = Order(emp3, stud3, [book3, book4, book5], '27.10.2021')
 print(order1)
