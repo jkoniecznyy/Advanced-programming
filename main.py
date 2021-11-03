@@ -54,9 +54,12 @@ print(task4(1, 2, 1))
 
 print("Task5")
 fil = findInList([1, 2, 3, 4, 5, 6, 7, 8, 9], 3)
-print('The number was in the list' if fil else 'The number was not in the list')
+print('The number was in the list' if fil
+      else 'The number was not in the list')
 fil = findInList([1, 2, 3, 4, 5, 6, 7, 8, 9], 30)
-print('The number was in the list' if fil else 'The number was not in the list')
+print('The number was in the list' if fil
+      else 'The number was not in the list')
 
 print("Task6")
-print(mergeLists([1, 2, 3, 4, 8, 'try', b'me'], [2, 3, 4, 5, 6, 7, 8, 9.9, 100, 6.7, 2j]))
+print(mergeLists([1, 2, 3, 4, 8, 'try', b'me'],
+                 [2, 3, 4, 5, 6, 7, 8, 9.9, 100, 6.7, 2j]))
