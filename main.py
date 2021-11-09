@@ -1,48 +1,48 @@
 class Firma:
     def __init__(self, nazwa: str, adres: str, prezes: str,
                  nip: int, wartoscRynkowa: float) -> None:
-        self.__nazwa = nazwa
-        self.__adres = adres
-        self.__prezes = prezes
-        self.__nip = nip
-        self.__wartoscRynkowa = wartoscRynkowa
+        self._nazwa = nazwa
+        self._adres = adres
+        self._prezes = prezes
+        self._nip = nip
+        self._wartoscRynkowa = wartoscRynkowa
 
     @property
     def nazwa(self) -> str:
-        return self.__nazwa
+        return self._nazwa
 
     @property
     def adres(self) -> str:
-        return self.__adres
+        return self._adres
 
     @property
     def prezes(self) -> str:
-        return self.__prezes
+        return self._prezes
 
     @property
     def nip(self) -> int:
-        return self.__nip
+        return self._nip
 
     @property
     def wartoscRynkowa(self) -> float:
-        return self.__wartoscRynkowa
+        return self._wartoscRynkowa
 
     def __str__(self) -> str:
-        return f'Firma o nazwie {self.__nazwa}, ' \
-               f'adresie {self.__adres},' \
-               f' prezes {self.__prezes}, nip {self.__nip},' \
-               f' wartosc rynkowa {self.__wartoscRynkowa}'
+        return f'Firma o nazwie {self._nazwa}, ' \
+               f'adresie {self._adres},' \
+               f' prezes {self._prezes}, nip {self._nip},' \
+               f' wartosc rynkowa {self._wartoscRynkowa}'
 
 
 class FirmaTransportowa(Firma):
     def __init__(self, nazwa: str, adres: str, prezes: str,
                  nip: int, wartoscRynkowa: float) -> None:
         super().__init__(nazwa, adres, prezes, nip, wartoscRynkowa)
-        self.__typFirmy = 'Transportowa'
+        self._typFirmy = 'Transportowa'
 
     @property
     def typFirmy(self) -> str:
-        return self.__typFirmy
+        return self._typFirmy
 
     def __str__(self) -> str:
         return 'Transportowa ' + super().__str__()
@@ -52,11 +52,11 @@ class FirmaSpozywcza(Firma):
     def __init__(self, nazwa: str, adres: str, prezes: str,
                  nip: int, wartoscRynkowa: float) -> None:
         super().__init__(nazwa, adres, prezes, nip, wartoscRynkowa)
-        self.__typFirmy = 'Spozywcza'
+        self._typFirmy = 'Spozywcza'
 
     @property
     def typFirmy(self) -> str:
-        return self.__typFirmy
+        return self._typFirmy
 
     def __str__(self) -> str:
         return 'Spozywcza ' + super().__str__()
@@ -64,163 +64,160 @@ class FirmaSpozywcza(Firma):
 
 class Pojazd:
     def __init__(self, marka: str, model: str, przebieg: int, rokProdukcji: int, pojemnosc: float) -> None:
-        self.__marka = marka
-        self.__model = model
-        self.__przebieg = przebieg
-        self.__rokProdukcji = rokProdukcji
-        self.__pojemnosc = pojemnosc
+        self._marka = marka
+        self._model = model
+        self._przebieg = przebieg
+        self._rokProdukcji = rokProdukcji
+        self._pojemnosc = pojemnosc
 
     @property
     def marka(self) -> str:
-        return self.__marka
+        return self._marka
 
     @property
     def model(self) -> str:
-        return self.__model
+        return self._model
 
     @property
     def przebieg(self) -> int:
-        return self.__przebieg
+        return self._przebieg
 
     @property
     def rokProdukcji(self) -> int:
-        return self.__rokProdukcji
+        return self._rokProdukcji
 
     @property
     def pojemnosc(self) -> float:
         return self.pojemnosc
 
     def __str__(self) -> str:
-        return f'Pojazd o marce {self.__marka}, ' \
-               f'modelu {self.__model},' \
-               f' przebiegu {self.__przebieg}, ' \
-               f'roku Produkcji {self.__rokProdukcji},' \
-               f' pojemnosci {self.__pojemnosc}'
+        return f'Pojazd o marce {self._marka}, ' \
+               f'modelu {self._model},' \
+               f' przebiegu {self._przebieg}, ' \
+               f'roku Produkcji {self._rokProdukcji},' \
+               f' pojemnosci {self._pojemnosc}'
 
 
 class Odcinek:
     def __init__(self, przypisanyPojazd: Pojazd, przypisanyKierowca: str, dlugosc: float, czasRozpoczecia: str,
                  czasZakonczenia: str) -> None:
-        self.__przypisanyPojazd = przypisanyPojazd
-        self.__przypisanyKierowca = przypisanyKierowca
-        self.__dlugosc = dlugosc
-        self.__czasRozpoczecia = czasRozpoczecia
-        self.__czasZakonczenia = czasZakonczenia
+        self._przypisanyPojazd = przypisanyPojazd
+        self._przypisanyKierowca = przypisanyKierowca
+        self._dlugosc = dlugosc
+        self._czasRozpoczecia = czasRozpoczecia
+        self._czasZakonczenia = czasZakonczenia
 
     @property
     def przypisanyPojazd(self) -> Pojazd:
-        return self.__przypisanyPojazd
+        return self._przypisanyPojazd
 
     @property
     def przypisanyKierowca(self) -> str:
-        return self.__przypisanyKierowca
+        return self._przypisanyKierowca
 
     @property
     def dlugosc(self) -> float:
-        return self.__dlugosc
+        return self._dlugosc
 
     @property
     def czasRozpoczecia(self) -> str:
-        return self.__czasRozpoczecia
+        return self._czasRozpoczecia
 
     @property
     def czasZakonczenia(self) -> str:
         return self.czasZakonczenia
 
     def __str__(self) -> str:
-        return f'Odcinek przypisany Pojazd{self.__przypisanyPojazd}, ' \
-               f'przypisanyKierowca {self.__przypisanyKierowca},' \
-               f' dlugosc {self.__dlugosc}, ' \
-               f'czasRozpoczecia {self.__czasRozpoczecia},' \
-               f' czasZakonczenia {self.__czasZakonczenia}'
+        return f'Odcinek przypisany Pojazd{self._przypisanyPojazd}, ' \
+               f'przypisanyKierowca {self._przypisanyKierowca},' \
+               f' dlugosc {self._dlugosc}, ' \
+               f'czasRozpoczecia {self._czasRozpoczecia},' \
+               f' czasZakonczenia {self._czasZakonczenia}'
 
 
 class Kurs:
     def __init__(self) -> None:
-        self.__numerKursu = 0
-        self.__pojazd = Pojazd
-        self.__listaOdcinkow = []
-        self.__firmaTransportowa = FirmaTransportowa
-        self.__czasRozpoczecia = ''
-        self.__czasZakonczenia = ''
-
+        self._numerKursu = 0
+        self._pojazd = Pojazd
+        self._listaOdcinkow = []
+        self._firmaTransportowa = FirmaTransportowa
+        self._czasRozpoczecia = ''
+        self._czasZakonczenia = ''
 
     @property
     def get_numerKursu(self) -> int:
-        return self.__numerKursu
+        return self._numerKursu
 
     @property
-    def get_pojazd(self) -> Type[Pojazd]:
-        return self.__pojazd
+    def get_pojazd(self) -> Pojazd:
+        return self._pojazd
 
     @property
     def get_listaOdcinkow(self) -> list:
-        return self.__listaOdcinkow
+        return self._listaOdcinkow
 
     @property
-    def get_firmaTransportowa(self) -> Type[FirmaTransportowa]:
-        return self.__firmaTransportowa
+    def get_firmaTransportowa(self) -> FirmaTransportowa:
+        return self._firmaTransportowa
 
     @property
     def get_czasRozpoczecia(self) -> str:
-        return self.__czasRozpoczecia
+        return self._czasRozpoczecia
 
     @property
     def get_czasZakonczenia(self) -> str:
-        return self.czasZakonczenia
+        return self._czasZakonczenia
 
     @numerKursu.setter
     def numerKursu(self, value: int) -> None:
-        self.__numerKursu = value
+        self._numerKursu = value
 
     @pojazd.setter
     def pojazd(self, value: Pojazd) -> None:
-        self.__pojazd = value
+        self._pojazd = value
 
     @listaOdcinkow.setter
     def listaOdcinkow(self, value: list) -> None:
-        self.__listaOdcinkow = value
+        self._listaOdcinkow = value
 
     @firmaTransportowa.setter
     def firmaTransportowa(self, value: FirmaTransportowa) -> None:
-        self.__firmaTransportowa = value
+        self._firmaTransportowa = value
 
     @czasRozpoczecia.setter
     def czasRozpoczecia(self, value: str) -> None:
-        self.__numerKursu = value
+        self._numerKursu = value
 
     @czasZakonczenia.setter
     def czasZakonczenia(self, value: str) -> None:
-        self.__czasRozpoczecia = value
+        self._czasRozpoczecia = value
 
     def __str__(self) -> str:
-        return f'Odcinek przypisany Pojazd{self.__przypisanyPojazd}, ' \
-               f'przypisanyKierowca {self.__przypisanyKierowca},' \
-               f' dlugosc {self.__dlugosc}, ' \
-               f'czasRozpoczecia {self.__czasRozpoczecia},' \
-               f' czasZakonczenia {self.__czasZakonczenia}'
+        return f'Odcinek przypisany Pojazd{self._przypisanyPojazd}, ' \
+               f'przypisanyKierowca {self._przypisanyKierowca},' \
+               f' dlugosc {self._dlugosc}, ' \
+               f'czasRozpoczecia {self._czasRozpoczecia},' \
+               f' czasZakonczenia {self._czasZakonczenia}'
 
     def policzKM(self):
         sumaKM = 0
-        for odcinek in self.__listaOdcinkow:
+        for odcinek in self._listaOdcinkow:
             sumaKM += odcinek.dlugosc
         return round(sumaKM, 2)
 
     def markaPojazdu(self):
-        return self.__pojazd.marka
+        return self._pojazd.marka
 
 
-
-# self.__numerKursu = 0
-#         self.__pojazd = Pojazd
-#         self.__listaOdcinkow = []
-#         self.__firmaTransportowa = FirmaTransportowa
-#         self.__czasRozpoczecia = ''
-#         self.__czasZakonczenia = ''
+# self._numerKursu = 0
+#         self._pojazd = Pojazd
+#         self._listaOdcinkow = []
+#         self._firmaTransportowa = FirmaTransportowa
+#         self._czasRozpoczecia = ''
+#         self._czasZakonczenia = ''
 # (self, marka: str, model: str, przebieg: int, rokProdukcji: int, pojemnosc: float)
 volvo = Pojazd('Volvo', 'Model', 100000, 2018, 2000.00)
 print(volvo)
-
 
 # (self, nazwa: str, adres: str, prezes: str,
 #              nip: int, wartoscRynkowa: float):
@@ -241,9 +238,4 @@ kurs1.pojazd(volvo)
 kurs1.numerKursu(1)
 kurs1.czasZakonczenia('10')
 kurs1.czasRozpoczecia('6')
-kurs1.listaOdcinkow([odcinek1,odcinek2, odcinek3, odcinek4, odcinek6])
-
-
-
-
-
+kurs1.listaOdcinkow([odcinek1, odcinek2, odcinek3, odcinek4, odcinek6])
