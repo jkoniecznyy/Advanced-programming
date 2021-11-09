@@ -209,23 +209,12 @@ class Kurs:
         return self._pojazd.marka
 
 
-# self._numerKursu = 0
-#         self._pojazd = Pojazd
-#         self._listaOdcinkow = []
-#         self._firmaTransportowa = FirmaTransportowa
-#         self._czasRozpoczecia = ''
-#         self._czasZakonczenia = ''
-# (self, marka: str, model: str, przebieg: int, rokProdukcji: int, pojemnosc: float)
 volvo = Pojazd('Volvo', 'Model', 100000, 2018, 2000.00)
 print(volvo)
 
-# (self, nazwa: str, adres: str, prezes: str,
-#              nip: int, wartoscRynkowa: float):
 f1 = FirmaTransportowa('DPF', 'Uniczowska 5', 'Janusz Tracz', 1232423423, 400000.5)
 print(f1)
 
-# def __init__(self, przypisanyPojazd: Pojazd, przypisanyKierowca: str, dlugosc: float, czasRozpoczecia: str,
-#                  czasZakonczenia: str) -> None:
 odcinek1 = Odcinek(volvo, 'And Bar', 50, '12', '13')
 odcinek2 = Odcinek(volvo, 'And Bar', 60, '12', '13')
 odcinek3 = Odcinek(volvo, 'And Bar', 70, '12', '13')
@@ -239,3 +228,4 @@ kurs1.numerKursu(1)
 kurs1.czasZakonczenia('10')
 kurs1.czasRozpoczecia('6')
 kurs1.listaOdcinkow([odcinek1, odcinek2, odcinek3, odcinek4, odcinek6])
+kurs1.firmaTransportowa(f1)
