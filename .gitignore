@@ -1,4 +1,5 @@
 /.idea
 /src/movies.csv
+/src/__pycache__
 Pipfile
 Pipfile.lock
