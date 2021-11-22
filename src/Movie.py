@@ -1,25 +1,29 @@
-from typing import Iterable
-from json import JSONEncoder
+import csv
+from dataclasses import dataclass
+from flask_restful import Resource
 
 
+@dataclass
 class Movie:
-    def __init__(self, mid: int, title: str, genres: list):
-        self._id = mid
-        self._title = title
-        self._genres = genres
 
-    def __str__(self) -> str:
-        return f'Id: {self._id}, title: {self._title} ' \
-               f'genres: {self._genres}'
-
-    def __dir__(self) -> Iterable[str]:
-        return super().__dir__()
-
-    @property
-    def id(self):
-        return self._id
+    id: int
+    title: str
+    genres: str
 
 
-class MovieEncoder(JSONEncoder):
-    def default(self, o):
-        return o.__dict__
+class Movies(Resource):
+
+    def __init__(self):
+        with open('src/movies.csv', encoding="utf8") as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',')
+            line_count = 0
+            self._movies = []
+            for row in csv_reader:
+                if line_count != 0:
+                    self._movies.append(Movie(row[0], row[1],
+                                              row[2].split("|")))
+                else:
+                    line_count += 1
+
+    def get(self):
+        return [movie.__dict__ for movie in self._movies]

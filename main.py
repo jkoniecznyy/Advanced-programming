@@ -1,10 +1,18 @@
 if __name__ == '__main__':
-    from src.routes import app
-    from argparse import ArgumentParser
+    from flask import Flask
+    from flask_restful import Api
+    from src.Movie import Movies
 
-    parser = ArgumentParser()
-    parser.add_argument('-p', '--port', default=5000, type=int, help='port to listen on')
-    args = parser.parse_args()
-    port = args.port
+    app = Flask(__name__)
+    api = Api(app)
 
-    app.run(host='0.0.0.0', port=port)
+    @app.route('/api/status', methods=['GET'])
+    def getNetworkStatus():
+        """
+            :rtype: str
+        """
+        return 'The network is working properly'
+
+    api.add_resource(Movies, '/api/movies')
+
+    app.run(host='0.0.0.0', port=5000, debug=True)

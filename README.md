@@ -2,7 +2,6 @@
 
 ##Installation
 
-Make sure Python 3.6+ is installed.
 $ pip install pipenv 
 $ pipenv install 
 
@@ -12,6 +11,6 @@ $ pipenv run python main.py
 
 ##Send requests to:
 
-http://localhost:5000/api/networkstatus
+http://localhost:5000/api/status
 
 http://localhost:5000/api/movies
