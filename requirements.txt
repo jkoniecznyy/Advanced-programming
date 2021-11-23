@@ -1,4 +1,4 @@
 pipenv>=2021.11
 flask>=2.0.2
 flask_restful>=0.3.8
-dataclasses>=0.8
+dataclasses>=0.6
