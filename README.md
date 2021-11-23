@@ -1,15 +1,15 @@
-#Task 07: API
+# Task 07: API
 
-##Installation
+## Installation
 
 $ pip install pipenv 
 $ pipenv install 
 
-##Run the API
+## Run the API
 
 $ pipenv run python main.py
 
-##Send requests to:
+## Send requests to:
 
 http://localhost:5000/api/status
 
