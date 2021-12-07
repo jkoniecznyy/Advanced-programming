@@ -1,8 +1,7 @@
 from flask import Flask
 from flask_restful import Api, Resource
 
-from src.read_functions.read_functions import read_movies_from_csv, \
-    read_links_from_csv, read_tags_from_csv, read_ratings_from_csv
+from src.read_functions.read_functions import read_from_csv
 
 app = Flask(__name__)
 api = Api(app)
@@ -19,25 +18,25 @@ def getNetworkStatus():
 class Movies(Resource):
 
     def get(self):
-        return [movie.__dict__ for movie in read_movies_from_csv()]
+        return [movie.__dict__ for movie in read_from_csv("Movie")]
 
 
 class Links(Resource):
 
     def get(self):
-        return [link.__dict__ for link in read_links_from_csv()]
+        return [link.__dict__ for link in read_from_csv("Link")]
 
 
 class Ratings(Resource):
 
     def get(self):
-        return [rating.__dict__ for rating in read_ratings_from_csv()]
+        return [rating.__dict__ for rating in read_from_csv("Rating")]
 
 
 class Tags(Resource):
 
     def get(self):
-        return [tag.__dict__ for tag in read_tags_from_csv()]
+        return [tag.__dict__ for tag in read_from_csv("Tag")]
 
 
 api.add_resource(Movies, '/api/movies')

@@ -1,0 +1,30 @@
+version: "3.9"
+services:
+  app:
+    build: .
+    #command: python main.py
+    #working_dir: /app
+    ports:
+      - 5000:5000
+    #volumes:
+    #  - .:/app
+
+# podtawowe instrukcje
+# sudo docker-compose ps -> sprawdzanie stanu kontenrów
+# sudo docker-compose exec app /bin/sh -> wchodzenie do kontenra
+# sudo docker-compose down -> usuniecie kontenra
+# sudo docker image ls -> lista obrazow
+
+# wejscie w logi
+# -f follow
+# sudo docker-compose logs -f --tail 100 app
+
+
+# reczne odpalenie
+# sudo docker-compose up -d --build
+# sudo docker-compose exec app /bin/sh
+# pip install -r requirements.txt
+# python main.py
+
+# command: /bin/sh -c "pip install -r requirements.txt && python main.py"
+
