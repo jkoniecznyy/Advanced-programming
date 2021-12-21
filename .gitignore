@@ -1,2 +1,4 @@
 .idea/
 classes/__pycache__
+Pipfile
+Pipfile.lock

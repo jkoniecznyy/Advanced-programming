@@ -47,13 +47,9 @@ class Zamowienie:
                '\n'.join(str(nier) for nier in self._lista_nieruchomosci)
 
     def oblicz_wartosc_zamowienia(self) -> float:
-        result = 0
-        for nieruchomosc in self._lista_nieruchomosci:
-            result += nieruchomosc.wartosc
-        return round(result, 2)
+        return round(sum(nieruchomosc.wartosc
+                         for nieruchomosc in self._lista_nieruchomosci), 2)
 
     def oblicz_powierzchnie_zamowienia(self) -> float:
-        result = 0
-        for nieruchomosc in self._lista_nieruchomosci:
-            result += nieruchomosc.powierzchnia
-        return round(result, 2)
+        return round(sum(nieruchomosc.powierzchnia
+                         for nieruchomosc in self._lista_nieruchomosci), 2)
