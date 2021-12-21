@@ -4,6 +4,7 @@ from classes.Nieruchomosc import Nieruchomosc
 class Dom(Nieruchomosc):
     def __init__(self, id: int, miasto: str, powierzchnia: float,
                  wartosc: float, rozmiar_dzialki: float):
+
         super().__init__(id, miasto, powierzchnia, wartosc)
         self._rozmiar_dzialki = rozmiar_dzialki
 
