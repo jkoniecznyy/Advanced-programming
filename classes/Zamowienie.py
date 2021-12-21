@@ -1,4 +1,3 @@
-from classes.Developer import Developer
 from classes.Nieruchomosc import Nieruchomosc
 
 
@@ -23,12 +22,12 @@ class Zamowienie:
         self._data = data
 
     @property
-    def developer(self) -> Developer:
-        return self._developer
+    def kupujacy(self) -> str:
+        return self._kupujacy
 
-    @developer.setter
-    def developer(self, developer: Developer):
-        self._developer = developer
+    @kupujacy.setter
+    def kupujacy(self, kupujacy: str):
+        self._kupujacy = kupujacy
 
     @property
     def lista_nieruchomosci(self) -> list[Nieruchomosc]:
@@ -42,7 +41,7 @@ class Zamowienie:
         return f'Zamowienie:\n' \
                f'id: {self._id},\n' \
                f'data: {self._data},\n' \
-               f'developer: \n{self._developer}\n\n' \
+               f'kupujacy: \n{self._kupujacy}\n\n' \
                f'lista_nieruchomosci:\n' + \
                '\n'.join(str(nier) for nier in self._lista_nieruchomosci)
 
