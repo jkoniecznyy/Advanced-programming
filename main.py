@@ -1,31 +1,20 @@
-from classes.Pojazd import Pojazd
-from classes.Odcinek import Odcinek
-from classes.FirmaTransportowa import FirmaTransportowa
-from classes.FirmaSpozywcza import FirmaSpozywcza
-from classes.Kurs import Kurs
+from classes.Nieruchomosc import Nieruchomosc
+from classes.Mieszkanie import Mieszkanie
+from classes.Dom import Dom
+from classes.Developer import Developer
+from classes.Zamowienie import Zamowienie
 
-volvo = Pojazd('Volvo', 'Model', 100000, 2018, 2000.00)
-# print(volvo)
 
-f1 = FirmaTransportowa('DPF', 'Uniczowska 5', 'Janusz Tracz',
-                       1232423423, 400000.5)
-# print(f1)
+dev1 = Developer('Janusz', 'Tracz', 513333555, 'jantracz@gmail.com')
+nier1 = Nieruchomosc(1, 'Krakow', 70.21231, 300000)
+dom1 = Dom(2, 'Wroclaw', 90.5, 1000000.99999999, 100.54564)
+miesz1 = Mieszkanie(3, 'Warszawa', 20.0786, 200000, 3)
 
-odcinek1 = Odcinek(volvo, 'And Bar', 50, '12', '13')
-odcinek2 = Odcinek(volvo, 'And Bar', 60, '12', '13')
-odcinek3 = Odcinek(volvo, 'And Bar', 70, '12', '13')
-odcinek4 = Odcinek(volvo, 'And Bar', 80, '12', '13')
-odcinek5 = Odcinek(volvo, 'And Bar', 90, '12', '13')
-# print([odcinek1, odcinek2, odcinek3, odcinek4,
-#                        odcinek5])
-
-kurs1 = Kurs()
-kurs1.pojazd = volvo
-kurs1.numerKursu = 1
-kurs1.czasZakonczenia = '10:50'
-kurs1.czasRozpoczecia = '6:00'
-kurs1.listaOdcinkow = [odcinek1, odcinek2, odcinek3, odcinek4,
-                       odcinek5]
-kurs1.firmaTransportowa = f1
-
-print(kurs1)
+zam1 = Zamowienie()
+zam1.id = 1
+zam1.data = '21.12.2021'
+zam1.developer = dev1
+zam1.lista_nieruchomosci = [nier1, dom1, miesz1]
+print(zam1)
+print('Laczna wartosc:', zam1.oblicz_wartosc_zamowienia())
+print('Laczna powierzchnia:', zam1.oblicz_powierzchnie_zamowienia())
