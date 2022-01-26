@@ -1,4 +1,4 @@
 .idea/
 __pycache__
-/x2.py
+/src/__pycache__
 /yolov3.weights
